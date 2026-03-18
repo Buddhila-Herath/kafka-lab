@@ -3,6 +3,7 @@ package com.example.inventoryservice.kafka;
 import com.example.inventoryservice.model.Inventory;
 import com.example.inventoryservice.model.InventoryEvent;
 import com.example.inventoryservice.service.InventoryService;
+import com.example.inventoryservice.event.OrderEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -25,7 +26,7 @@ public class InventoryConsumer {
     }
     
     @KafkaListener(topics = "${order.topic}", groupId = "inventory-group")
-    public void consumeOrderEvent(com.example.orderservice.model.OrderEvent event) {
+    public void consumeOrderEvent(OrderEvent event) {
         logger.info("Received order event: {} of type: {}", event.getEventId(), event.getEventType());
         
         if ("ORDER_CREATED".equals(event.getEventType())) {

@@ -73,23 +73,35 @@ docker-compose up -d
 
 ### 2. Build all services
 
+You can build all services using the provided build script:
+
 ```bash
+# Make the script executable (if not already)
+chmod +x build-all.sh
+
+# Run the build script
+./build-all.sh
+```
+
+Alternatively, you can build them manually:
+
+```bash
+# Go to root directory
+cd microservices-kafka-lab
+
 # Build Order Service
-cd order-service
-./mvnw clean package
+cd order-service && mvn clean package && cd ..
 
 # Build Inventory Service
-cd ../inventory-service
-./mvnw clean package
+cd inventory-service && mvn clean package && cd ..
 
 # Build Billing Service
-cd ../billing-service
-./mvnw clean package
+cd billing-service && mvn clean package && cd ..
 
 # Build API Gateway
-cd ../api-gateway
-./mvnw clean package
+cd api-gateway && mvn clean package && cd ..
 ```
+
 
 ### 3. Start all services
 

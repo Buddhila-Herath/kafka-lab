@@ -20,26 +20,29 @@ public class InventoryConsumer {
     public void consumeOrderEvent(OrderEvent orderEvent) {
         log.info("Inventory service received order event: {}", orderEvent);
         
+        String productId = orderEvent.getOrder().getProductId();
+        int quantity = orderEvent.getOrder().getQuantity();
+
         // Check if inventory exists for the product
-        Inventory inventory = inventoryRepository.findByProduct(orderEvent.getProduct())
+        Inventory inventory = inventoryRepository.findByProduct(productId)
             .orElseGet(() -> {
                 // Create new inventory for product if not exists
                 Inventory newInventory = new Inventory();
-                newInventory.setProduct(orderEvent.getProduct());
+                newInventory.setProduct(productId);
                 newInventory.setQuantity(100); // Default stock
                 newInventory.setReservedQuantity(0);
                 return inventoryRepository.save(newInventory);
             });
         
         // Update inventory
-        if (inventory.getQuantity() >= orderEvent.getQuantity()) {
-            inventory.setQuantity(inventory.getQuantity() - orderEvent.getQuantity());
+        if (inventory.getQuantity() >= quantity) {
+            inventory.setQuantity(inventory.getQuantity() - quantity);
             inventoryRepository.save(inventory);
             log.info("Inventory updated for product: {}. Remaining quantity: {}", 
-                orderEvent.getProduct(), inventory.getQuantity());
+                productId, inventory.getQuantity());
         } else {
             log.warn("Insufficient inventory for product: {}. Available: {}, Requested: {}", 
-                orderEvent.getProduct(), inventory.getQuantity(), orderEvent.getQuantity());
+                productId, inventory.getQuantity(), quantity);
         }
     }
 }

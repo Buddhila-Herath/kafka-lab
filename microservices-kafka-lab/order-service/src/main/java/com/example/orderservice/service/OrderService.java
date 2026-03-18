@@ -41,11 +41,21 @@ public class OrderService {
         Order savedOrder = orderRepository.save(order);
         logger.info("Order saved with ID: {}", savedOrder.getId());
         
+        // Map entity to model for Kafka event
+        com.example.orderservice.model.Order orderModel = new com.example.orderservice.model.Order(
+            savedOrder.getId().toString(),
+            savedOrder.getProduct(),
+            savedOrder.getQuantity(),
+            savedOrder.getPrice(),
+            savedOrder.getOrderStatus(),
+            savedOrder.getOrderDate()
+        );
+
         // Create and publish event to Kafka
         OrderEvent orderEvent = new OrderEvent(
             UUID.randomUUID().toString(),
             "ORDER_CREATED",
-            savedOrder,
+            orderModel,
             LocalDateTime.now()
         );
         

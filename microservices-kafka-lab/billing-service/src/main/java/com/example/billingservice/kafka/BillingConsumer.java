@@ -3,6 +3,7 @@ package com.example.billingservice.kafka;
 import com.example.billingservice.model.Billing;
 import com.example.billingservice.model.BillingEvent;
 import com.example.billingservice.service.BillingService;
+import com.example.billingservice.dto.InventoryEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -25,7 +26,7 @@ public class BillingConsumer {
     }
     
     @KafkaListener(topics = "${inventory.topic}", groupId = "billing-group")
-    public void consumeInventoryEvent(com.example.inventoryservice.model.InventoryEvent event) {
+    public void consumeInventoryEvent(InventoryEvent event) {
         logger.info("Received inventory event: {} of type: {}", event.getEventId(), event.getEventType());
         
         if ("INVENTORY_RESERVED".equals(event.getEventType())) {
