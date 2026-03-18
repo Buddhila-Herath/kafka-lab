@@ -1,0 +1,12 @@
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/event/OrderEvent.java
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/kafka/InventoryConsumer.java
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/controller/InventoryController.java
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/kafka/InventoryProducer.java
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/InventoryServiceApplication.java
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/repository/InventoryRepository.java
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/dto/Order.java
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/model/InventoryEvent.java
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/entity/Inventory.java
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/service/InventoryService.java
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/consumer/InventoryConsumer.java
+/home/buddila/Desktop/labsheeeet6-kafka/microservices-kafka-lab/inventory-service/src/main/java/com/example/inventoryservice/model/Inventory.java
