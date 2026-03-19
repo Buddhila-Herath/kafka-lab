@@ -17,7 +17,7 @@ This project implements a distributed system with four microservices:
 - Spring Cloud Gateway 2023.0.0
 - Apache Kafka
 - H2 In-Memory Database
-- Java 17
+- Java 21
 
 ## Project Structure
 
