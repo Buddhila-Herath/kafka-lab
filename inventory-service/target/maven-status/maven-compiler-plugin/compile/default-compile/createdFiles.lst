@@ -1,12 +1,11 @@
 com\example\inventoryservice\model\InventoryEvent.class
-com\example\inventoryservice\consumer\InventoryConsumer.class
 com\example\inventoryservice\kafka\InventoryProducer.class
-com\example\inventoryservice\event\OrderEvent.class
-com\example\inventoryservice\kafka\InventoryConsumer.class
 com\example\inventoryservice\repository\InventoryRepository.class
 com\example\inventoryservice\service\InventoryService.class
 com\example\inventoryservice\dto\Order.class
 com\example\inventoryservice\entity\Inventory.class
 com\example\inventoryservice\InventoryServiceApplication.class
+com\example\inventoryservice\event\OrderEvent.class
+com\example\inventoryservice\kafka\InventoryConsumer.class
 com\example\inventoryservice\controller\InventoryController.class
 com\example\inventoryservice\model\Inventory.class

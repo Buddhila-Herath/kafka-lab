@@ -39,14 +39,14 @@ services:
     networks:
       - micro-net
 
-  gateway:
+  api-gateway:
     build:
-      context: ./gateway
-    container_name: gateway
+      context: ./api-gateway
+    container_name: api-gateway
     depends_on:
       - order-service
       - inventory-service
-      - notification-service
+      - billing-service
     ports:
       - "8080:8080"
     networks:
@@ -74,10 +74,10 @@ services:
     networks:
       - micro-net
 
-  notification-service:
+  billing-service:
     build:
-      context: ./notification-service
-    container_name: notification-service
+      context: ./billing-service
+    container_name: billing-service
     depends_on:
       - kafka
     ports:

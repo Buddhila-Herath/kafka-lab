@@ -1,5 +1,4 @@
 com\example\billingservice\model\BillingEvent.class
-com\example\billingservice\consumer\BillingConsumer.class
 com\example\billingservice\model\Billing.class
 com\example\billingservice\entity\Invoice.class
 com\example\billingservice\controller\BillingController.class
